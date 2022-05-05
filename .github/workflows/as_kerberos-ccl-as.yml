@@ -60,4 +60,4 @@ jobs:
         with:
           app-name: 'Kerberos-CCL-AS'
           slot-name: 'Production'
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_4DA00793550E463CA16D0FC809C39E2C }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_24A9406E02E84DB88BDF61351E84F490 }}
