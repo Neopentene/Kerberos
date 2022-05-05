@@ -1,0 +1,68 @@
+{% extends 'base.html' %}
+
+{% block css %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/index.css') }}">
+{% endblock %}
+
+{% block js %}
+<script defer src="{{ url_for('static', filename='js/index.js') }}"></script>
+<script src="https://cdn.jsdelivr.net/npm/node-forge@1.0.0/dist/forge.min.js"></script>
+<script src="{{ url_for('static', filename='js/BigInt.js') }}"></script>
+<script src="{{ url_for('static', filename='js/Barrett.js') }}"></script>
+<script src="{{ url_for('static', filename='js/RSA.js') }}"></script>
+{% endblock %}
+
+{% block title %}
+Kerberos
+{% endblock %}
+
+{% block head %}
+<header>
+    <div class="logo"><b>k<span>er</span>ber<span>o</span>s</b></div>
+</header>
+{% endblock %}
+
+{% block body %}
+<section>
+    <form id="login-form" class="modal">
+        <h2>Login</h2>
+        <div class="input-holder">
+            <input id="username" class="input-field" type="text" placeholder="Username" />
+            <span class="focus-border"></span>
+        </div>
+        <div class="input-holder">
+            <input id="password" class="input-field" type="password" placeholder="Password" />
+            <span class="focus-border"></span>
+        </div>
+        <div class="input-holder">
+            <input id="toggle-password-field" class="styled-checkbox" type="checkbox" name="show-password" />
+            <label id="toggle-password-field-label" for="toggle-password-field">show password</label>
+        </div>
+        <div class="input-holder">
+            <button id="login" class="input-button">
+                GO
+            </button>
+        </div>
+    </form>
+</section>
+<section id="status-container" data-type="invisible">
+    <div id="loading-active" data-type="invisible" class="center m-3">
+        <div class="wave"></div>
+        <div class="wave"></div>
+        <div class="wave"></div>
+        <div class="wave"></div>
+        <div class="wave"></div>
+        <div class="wave"></div>
+        <div class="wave"></div>
+        <div class="wave"></div>
+        <div class="wave"></div>
+        <div class="wave"></div>
+    </div>
+    <div id="loading-inactive" data-type="visible" class="center m-3">
+        <div class="no-wave"></div>
+    </div>
+    <h3 id="status"></h3>
+    <button id="status-update" class="simple-btn btn-neon"></button>
+    <p id="status-body"></p>
+</section>
+{% endblock %}
